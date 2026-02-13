@@ -5,6 +5,8 @@ import { useRouter } from "next/navigation";
 import { clearAuthCookie, isAuthed } from "../../components/auth";
 import { GhostButton } from "../../components/ui";
 import WaReminder from "../../components/wa/WaReminder";
+import TelegramReminder from "../../components/telegram/TelegramReminder";
+
 
 
 type MenuKey = "tools" | "administrasi";
@@ -81,7 +83,9 @@ export default function DashboardPage() {
 function renderContent() {
   switch (activeItem.key) {
     case "wa-reminder":
-      return <WaReminder />;
+      return <WaReminder />; // kalau sudah ada
+    case "telegram-reminder":
+      return <TelegramReminder />;
     default:
       return null;
   }
