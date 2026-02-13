@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import { isAuthed, setAuthCookie } from "../components/auth";
-import { Badge, Card, CardBody, CardHeader, Divider, Input, PrimaryButton } from "../components/ui";
+import { Badge, Card, CardBody, Divider, Input, PrimaryButton } from "../components/ui";
 
 function validateCreds(username: string, password: string) {
   // Demo credentials (ganti sesuai kebutuhan)
@@ -58,10 +58,7 @@ export default function LoginPage() {
         </div>
 
         <Card>
-          <CardHeader
-           /* title="Disclaimer"
-            subtitle="Harap baca sebelum login" */
-          />
+
           <CardBody>
             <ul className="space-y-3 text-sm text-slate-600">
               {disclaimer.map((x) => (

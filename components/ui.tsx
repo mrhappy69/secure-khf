@@ -8,7 +8,7 @@ export function Card({ children }: { children: React.ReactNode }) {
   );
 }
 
-export function CardHeader({ title, subtitle }: { title: string; subtitle?: string }) {
+/*export function CardHeader({ title, subtitle }: { title: string; subtitle?: string }) {
   return (
     <div className="px-7 pt-7 pb-5 border-b border-slate-100">
       <div>
@@ -17,7 +17,26 @@ export function CardHeader({ title, subtitle }: { title: string; subtitle?: stri
       </div>
     </div>
   );
+}*/
+export function CardHeader({
+  title,
+  subtitle,
+}: {
+  title?: string;
+  subtitle?: string;
+}) {
+  if (!title && !subtitle) return null;
+
+  return (
+    <div className="px-7 pt-7 pb-5 border-b border-slate-100">
+      <div>
+        {title ? <h1 className="text-lg font-semibold leading-tight">{title}</h1> : null}
+        {subtitle ? <p className="text-sm text-slate-500">{subtitle}</p> : null}
+      </div>
+    </div>
+  );
 }
+
 
 
 export function CardBody({ children }: { children: React.ReactNode }) {
